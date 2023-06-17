@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Detail Task</h1>
+    <hr>
+<h2>Description: {{ task.description }}</h2>
+
+<h2 class="mt-3 mb-3"><span class="text-success">Status</span>: {{ task.status }}</h2>
+<h2>Created: {{ task.date_of_completion }}</h2>
+    <a href="/" class="btn btn-success mt-3">Return page</a>
+{% endblock %}
