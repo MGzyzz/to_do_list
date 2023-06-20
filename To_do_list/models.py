@@ -8,6 +8,13 @@ class Task(models.Model):
         ('in_progress', 'В процессе'),
         ('done', 'Сделано')
     )
+    #
+    name = models.TextField(
+        max_length=250,
+        null=False,
+        blank=False,
+        verbose_name='Имя'
+    )
 
     description = models.TextField(
         max_length=1000,
@@ -21,6 +28,12 @@ class Task(models.Model):
         default='new',
         null=False,
         blank=False
+    )
+
+    start_date = models.DateField(
+        'Начало даты',
+        null=True,
+        blank=True
     )
 
     date_of_completion = models.DateField(
