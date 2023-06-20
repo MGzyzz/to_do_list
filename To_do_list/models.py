@@ -9,9 +9,9 @@ class Task(models.Model):
         ('done', 'Сделано')
     )
     #
-    name = models.TextField(
+    name = models.CharField(
         max_length=250,
-        null=False,
+        null=True,
         blank=False,
         verbose_name='Имя'
     )
@@ -22,6 +22,7 @@ class Task(models.Model):
         blank=False,
         verbose_name="Описание"
     )
+
     status = models.CharField(
         max_length=20,
         choices=TASK_STATUS_CHOICE,
