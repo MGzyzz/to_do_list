@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
 <div>
 <h1>Create Task</h1>
 <form action="/task/add" method="post">
     {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="name" class="form-control mb-3" required>
     <label>Description: </label>
-    <input type="text" name="description" class="form-control" required>
-    <br>
+    <textarea name="description" class="form-control mb-3"></textarea>
     <label>Status:</label><br/>
-    <select id="status" name="status" class="form-select" required>
+    <select id="status" name="status" class="form-select mb-3" required>
         {% for value, display_name in status_choices %}
             <option value="{{ value }}">{{ display_name }}</option>
         {% endfor %}
-    </select><br/>
-
+    </select>
+    <label>Start_date:</label>
+    <input type="date" name="start_date" class="form-control mb-3">
     <label>Completed_date:</label><br/>
     <input type="date" name="completion_date" class="form-control" required><br/>
     <br/>
