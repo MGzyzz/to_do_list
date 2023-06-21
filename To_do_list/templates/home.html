@@ -13,7 +13,7 @@
                 {% else %}
                 <h5 class="card-title text-primary fs-3">{{ task.status }}</h5>
                 {% endif %}
-                <p class="card-text">{{ task.description }}</p>
+                <p class="card-text">{{ task.description|linebreaks }}</p>
                 <a href="{% url 'task-detail' id=task.id %}" class="btn btn-primary">Подробнее</a>
             </div>
         </div>
