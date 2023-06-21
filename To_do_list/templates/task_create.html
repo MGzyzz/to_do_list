@@ -3,7 +3,7 @@
 {% block content %}
 <div>
 <h1>Create Task</h1>
-<form action="{% url 'task-add' %}" method="post">
+<form method="post">
     {% csrf_token %}
     <label>Name:</label>
     <input type="text" name="name" class="form-control mb-3" required>
