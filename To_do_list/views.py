@@ -14,13 +14,13 @@ def views_all(request):
 def new_task(request):
     if request.method == 'POST':
         data = request.POST
-        print(data)
         task_data = {
+            'name': data.get('name'),
             'description': data.get("description"),
             'status': data.get("status"),
+            'start_date': data.get('start_date'),
             'date_of_completion': data.get("completion_date")
         }
-        print(task_data)
         task = Task.objects.create(**task_data)
         return redirect('task-detail', id=task.id)
     else:
