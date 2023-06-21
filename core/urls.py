@@ -21,7 +21,7 @@ from To_do_list import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.views_all),
+    path('', views.views_all, name='home'),
     path('task/add', views.new_task, name='task-add'),
     path('task/<int:id>/', views.task_detail_view, name='task-detail')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
