@@ -3,45 +3,55 @@
     "model": "To_do_list.task",
     "pk": 1,
     "fields": {
-        "description": "Check 1",
+        "name": "Check one",
+        "description": "This is new task!",
         "status": "new",
-        "date_of_completion": "2023-06-01"
+        "start_date": "2023-06-21",
+        "date_of_completion": "2023-06-25"
     }
 },
 {
     "model": "To_do_list.task",
     "pk": 2,
     "fields": {
-        "description": "check 2",
+        "name": "Check two",
+        "description": "This is new task!",
         "status": "in_progress",
-        "date_of_completion": "2023-06-15"
+        "start_date": "2023-06-21",
+        "date_of_completion": "2023-06-26"
     }
 },
 {
     "model": "To_do_list.task",
     "pk": 3,
     "fields": {
-        "description": "check 3",
+        "name": "Check three",
+        "description": "This is new task!",
         "status": "done",
-        "date_of_completion": "2023-06-10"
+        "start_date": "2023-06-21",
+        "date_of_completion": "2023-06-28"
     }
 },
 {
     "model": "To_do_list.task",
     "pk": 4,
     "fields": {
-        "description": "check 4 ",
+        "name": "Check four",
+        "description": "This\r\n\r\nis\r\n\r\nnew \r\n\r\ntask!",
         "status": "done",
-        "date_of_completion": "2023-06-07"
+        "start_date": "2023-06-21",
+        "date_of_completion": "2023-07-01"
     }
 },
 {
     "model": "To_do_list.task",
     "pk": 5,
     "fields": {
-        "description": "check 5",
-        "status": "new",
-        "date_of_completion": "2023-06-15"
+        "name": "Check five",
+        "description": "This is new \r\n\r\ntask!",
+        "status": "in_progress",
+        "start_date": "2023-06-21",
+        "date_of_completion": "2023-07-09"
     }
 }
 ]
