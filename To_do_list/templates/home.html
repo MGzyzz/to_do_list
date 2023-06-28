@@ -1,21 +1,36 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    <form method="POST">
+    {% csrf_token %}
     {% for task in tasks %}
         <hr>
         <div class="card text-dark mb-3">
             <h5 class="card-header fs-2  bg-warning">{{ task.name }}</h5>
             <div class="card-body">
-                {% if task.status == 'new' %}
-                <h5 class="card-title text-success fs-3">{{ task.status }}</h5>
-                {% elif task.status == 'in_progress' %}
-                <h5 class="card-title text-warning fs-3">{{ task.status }}</h5>
+                {% if task.status_id == 3 %}
+                <h5 class="card-title text-success fs-3">{{ task.status.name }}</h5>
+                {% elif task.status_id == 2 %}
+                <h5 class="card-title text-warning fs-3">{{ task.status.name }}</h5>
                 {% else %}
-                <h5 class="card-title text-primary fs-3">{{ task.status }}</h5>
+                <h5 class="card-title text-primary fs-3">{{ task.status.name }}</h5>
                 {% endif %}
                 <p class="card-text">{{ task.description|linebreaks }}</p>
-                <a href="{% url 'task-detail' id=task.id %}" class="btn btn-primary">Подробнее</a>
+                <a href="{% url 'task-detail' id=task.id %}" class="btn btn-primary">More</a>
+            <div class="form-check text-end ">
+                <label for="{{ task.id }}">
+                    <input type="checkbox" value="{{ task.id }}" id='{{ task.id }}' name='task'>
+                </label>
+                <label class="form-check-label" for="{{ task.id }}"></label>
+            </div>
             </div>
         </div>
     {% endfor %}
+    {% if tasks %}
+            <button type="submit" class="btn btn-danger mt-3 mb-5" id="check">Delete</button>
+        {% else %}
+        <h1 class="fs-1 text-center"> No Task </h1>
+    {% endif %}
+    </form>
+    <script src="{% static 'js/scripts.js' %}"></script>
 {% endblock %}
