@@ -1,26 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div>
-<h1>Create Task</h1>
 <form method="post">
-    {% csrf_token %}
-    <label>Name:</label>
-    <input type="text" name="name" class="form-control mb-3" required>
-    <label>Description: </label>
-    <textarea name="description" class="form-control mb-3"></textarea>
-    <label>Status:</label><br/>
-    <select id="status" name="status" class="form-select mb-3" required>
-        {% for value, display_name in status_choices %}
-            <option value="{{ value }}">{{ display_name }}</option>
-        {% endfor %}
-    </select>
-    <label>Start_date:</label>
+  {% csrf_token %}
+  <h1>Create Task</h1>
+  {% include 'form/task_form.html' %}
+        <label>Start_date:</label>
     <input type="date" name="start_date" class="form-control mb-3" required>
     <label>Completed_date:</label><br/>
     <input type="date" name="completion_date" class="form-control" required><br/>
     <br/>
-    <button type="submit" class="btn btn-success">Добавить</button>
+    <button type="submit" class="btn btn-success">Add</button>
+
 </form>
-</div>
+
 {% endblock %}
