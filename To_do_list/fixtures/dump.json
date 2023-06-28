@@ -74,5 +74,23 @@
     "start_date": "2023-06-21",
     "date_of_completion": "2023-07-09"
   }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$JIUmfjZ3RZjeG99fxZCCEC$lYkUIRcuC2Hc0Y+qP2QKo56rCQbFaGa9KAClOkm2mcM=",
+    "last_login": "2023-06-28T22:00:19.944Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-06-28T22:00:00.283Z",
+    "groups": [],
+    "user_permissions": []
+  }
 }
 ]
