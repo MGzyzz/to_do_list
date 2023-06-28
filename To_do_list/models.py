@@ -1,13 +1,21 @@
 from django.db import models
 
 
-class Task(models.Model):
 
-    TASK_STATUS_CHOICE = (
-        ('new', 'Новая'),
-        ('in_progress', 'В процессе'),
-        ('done', 'Сделано')
+class Status(models.Model):
+    name = models.CharField(
+        max_length=200,
+        null=False,
+        blank=None,
+        verbose_name='Имя'
     )
+
+    def __str__(self):
+        return self.name
+
+
+
+class Task(models.Model):
     #
     name = models.CharField(
         max_length=250,
@@ -18,18 +26,12 @@ class Task(models.Model):
 
     description = models.TextField(
         max_length=1000,
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         verbose_name="Описание"
     )
 
-    status = models.CharField(
-        max_length=20,
-        choices=TASK_STATUS_CHOICE,
-        default='new',
-        null=False,
-        blank=False
-    )
+    status = models.ForeignKey(Status, on_delete=models.CASCADE)
 
     start_date = models.DateField(
         'Начало даты',
