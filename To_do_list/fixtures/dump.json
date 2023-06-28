@@ -5,7 +5,7 @@
     "fields": {
         "name": "Check one",
         "description": "This is new task!",
-        "status": "new",
+        "status": "1",
         "start_date": "2023-06-21",
         "date_of_completion": "2023-06-25"
     }
@@ -16,7 +16,7 @@
     "fields": {
         "name": "Check two",
         "description": "This is new task!",
-        "status": "in_progress",
+        "status": "2",
         "start_date": "2023-06-21",
         "date_of_completion": "2023-06-26"
     }
@@ -27,7 +27,7 @@
     "fields": {
         "name": "Check three",
         "description": "This is new task!",
-        "status": "done",
+        "status": "3",
         "start_date": "2023-06-21",
         "date_of_completion": "2023-06-28"
     }
@@ -38,7 +38,7 @@
     "fields": {
         "name": "Check four",
         "description": "This\r\n\r\nis\r\n\r\nnew \r\n\r\ntask!",
-        "status": "done",
+        "status": "3",
         "start_date": "2023-06-21",
         "date_of_completion": "2023-07-01"
     }
@@ -49,7 +49,7 @@
     "fields": {
         "name": "Check five",
         "description": "This is new \r\n\r\ntask!",
-        "status": "in_progress",
+        "status": "2",
         "start_date": "2023-06-21",
         "date_of_completion": "2023-07-09"
     }
