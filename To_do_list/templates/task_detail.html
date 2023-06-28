@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% load static %}
 <h1>Detail Task</h1>
     <hr>
+    <form method="post">
+    {% csrf_token %}
     <h2 class="mb-3">Name: {{ task.name }}</h2>
     <h2>Description: {{ task.description|linebreaks }}</h2>
 {% if task.status == 'new' %}
-    <h2 class="mt-3 mb-3 text-success"><span class="text-white">Status:</span> {{ task.status }}</h2>
+    <h2 class="mt-3 mb-3 text-primary"><span class="text-white">Status:</span> {{ task.status.name }}</h2>
     {% elif task.status == 'in_progress' %}
-    <h2 class="mt-3 mb-3 text-warning"><span class="text-white">Status:</span> {{ task.status }}</h2>
+    <h2 class="mt-3 mb-3 text-warning"><span class="text-white">Status:</span> {{ task.status.name }}</h2>
     {% else %}
-    <h2 class="mt-3 mb-3 text-primary"><span class="text-white">Status:</span> {{ task.status }}</h2>
+    <h2 class="mt-3 mb-3 text-success"><span class="text-white">Status:</span> {{ task.status.name }}</h2>
 
     {% endif %}
     <hr>
     <h2 class="mb-5">Date of creation : {{ task.start_date }}</h2>
     <h2>Completion date: {{ task.date_of_completion }}</h2>
     <hr>
-    <a href="{% url 'home' %}" class="btn btn-success mt-3">Return page</a>
+    <a href="{% url 'task-edit' task.id %}" class="btn btn-info mt-3 ms-3 text-white">Edit Task</a>
+    <button class="btn btn-danger mt-3 ms-3 text-white" onclick="return confirmDelete()">Delete Task</button>
+    </form>
+    <script src="{% static 'js/scripts.js' %}"></script>
 {% endblock %}
