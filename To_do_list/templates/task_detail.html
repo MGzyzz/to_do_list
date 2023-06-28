@@ -7,12 +7,12 @@
     {% csrf_token %}
     <h2 class="mb-3">Name: {{ task.name }}</h2>
     <h2>Description: {{ task.description|linebreaks }}</h2>
-{% if task.status == 'new' %}
-    <h2 class="mt-3 mb-3 text-primary"><span class="text-white">Status:</span> {{ task.status.name }}</h2>
-    {% elif task.status == 'in_progress' %}
+{% if task.status.name == 'Новая' %}
+    <h2 class="mt-3 mb-3 text-success"><span class="text-white">Status:</span> {{ task.status.name }}</h2>
+    {% elif task.status.name == 'В прогрессе' %}
     <h2 class="mt-3 mb-3 text-warning"><span class="text-white">Status:</span> {{ task.status.name }}</h2>
     {% else %}
-    <h2 class="mt-3 mb-3 text-success"><span class="text-white">Status:</span> {{ task.status.name }}</h2>
+    <h2 class="mt-3 mb-3 text-primary"><span class="text-white">Status:</span> {{ task.status.name }}</h2>
 
     {% endif %}
     <hr>

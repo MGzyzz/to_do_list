@@ -8,9 +8,9 @@
         <div class="card text-dark mb-3">
             <h5 class="card-header fs-2  bg-warning">{{ task.name }}</h5>
             <div class="card-body">
-                {% if task.status_id == 3 %}
+                {% if task.status.name == 'Новая' %}
                 <h5 class="card-title text-success fs-3">{{ task.status.name }}</h5>
-                {% elif task.status_id == 2 %}
+                {% elif task.status.name ==  'В прогрессе' %}
                 <h5 class="card-title text-warning fs-3">{{ task.status.name }}</h5>
                 {% else %}
                 <h5 class="card-title text-primary fs-3">{{ task.status.name }}</h5>
